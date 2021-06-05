@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  background-color: orange;
+}
+.DictionaryImg {
+  background-color: orange;
+  max-width: 200px;
+  position: relative;
+  padding-top: 50px;
+  margin-right: 800px;
+  
+}
+.App-header {
+  margin: 30px;
+  display: block;
+}
+
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+
