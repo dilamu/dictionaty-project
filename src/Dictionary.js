@@ -1,39 +1,37 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
-import Definitions from "./Definitions";
+import Define from "./Define";
+
 
 export default function Dictionary() {
     let [keyword, setKeyword] = useState("");
-    let [definitions, setDefinitions] = useState({});
+    let [define, setDefine] = useState(null);
+    
 
     function handleResponse(response) {
         console.log(response.data[0]);
-        setDefinitions(response.data[0]);
-
+        setDefine(response.data[0]);
     }
     
-    function handleKeyword(event) {
-        console.log(event);
-        setKeyword(event.target.value);
+    function handleKeywordChange(event) {
+        setKeyword(event.target.value); //update state
       }
 
     function search(event){
         event.preventDefault();
-
+      //  alert(`Searching for ${keyword} definition`);
         //https://dictionaryapi.dev/
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
         axios.get(apiUrl).then(handleResponse);
     }
       
-
     return (
         <div className="Dictionary">
             <form onSubmit={search}>
-                <input type="search" onChange={handleKeyword} />
-    
+                <input type="search" onChange={handleKeywordChange} />
             </form>
-            <Definitions Definition={Definitions} />
+            <Define define={define} />
         </div>
-    );
+    );  
 }

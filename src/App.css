@@ -1,13 +1,14 @@
 body {
   text-align: center;
-  background-color: rgb(255, 102, 0);
+color: black;
 }
+
 .DictionaryImg {
-  background-color: orange;
+  background-color:white;
   max-width: 200px;
   position: relative;
-  padding-top: 50px;
-  margin-right: 800px;
+  padding-top: 40px;
+  margin-right: 400px;
   
 }
 .App-header {
@@ -22,9 +23,11 @@ body {
 .Ictonary {
   font-size: 100px;
   position: relative;
-  line-height: 0%;
-  color:white;
+  line-height: 1%;
+  color:black;
   margin-right: 1%;
+  background-color: yellow;
+  background-size: 100%;
 
 }
 
