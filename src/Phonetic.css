@@ -1,3 +1,8 @@
+.Phonetic {
+    margin: 20px 0;
+ 
+}
+
 .Phonetic a {
     text-decoration: none;
     border-radius: 20px;
@@ -10,5 +15,7 @@
 }
 .Phonetic .text {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 50px;
+
+    
 }
