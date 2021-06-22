@@ -5,12 +5,23 @@ import Define from "./Define";
 
 
 export default function Dictionary() {
-    let [keyword, setKeyword] = useState("");
+    let [keyword, setKeyword] = useState("dictionary");
     let [define, setDefine] = useState(null);
+    let [loaded, setLoaded] = useState(false);
+    
+    function search() {
+        //https://dictionaryapi.dev/
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+        axios.get(apiUrl).then(handleResponse);
+    }
     
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
     function handleResponse(response) {
-        console.log(response.data[0]);
         setDefine(response.data[0]);
     }
     
@@ -18,20 +29,24 @@ export default function Dictionary() {
         setKeyword(event.target.value); //update state
       }
 
-    function search(event){
-        event.preventDefault();
-      //  alert(`Searching for ${keyword} definition`);
-        //https://dictionaryapi.dev/
-        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-        axios.get(apiUrl).then(handleResponse);
+    function load() {
+        setLoaded(true);
+        search();
     }
-      
+
+    if (loaded) {
     return (
         <div className="Dictionary">
-            <form onSubmit={search}>
-                <input type="search" onChange={handleKeywordChange} />
-            </form>
+            <section>
+                <form onSubmit={handleSubmit}>
+                    <input type="search" onChange={handleKeywordChange} />
+                </form>
+            </section>
             <Define define={define} />
         </div>
     );  
+    } else {
+        load();
+        return "LOADING...";
+    }
 }

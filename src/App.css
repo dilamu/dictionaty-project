@@ -1,21 +1,26 @@
 body {
   text-align: center;
-color: black;
+  color: black;
+  background-color: rgb(226, 226, 226);
 }
 
 .DictionaryImg {
-  background-color:white;
+  background-color:rgb(226, 226, 226);
   max-width: 200px;
   position: relative;
   padding-top: 40px;
-  margin-right: 400px;
+  margin-right: 450px;
+
   
 }
 .App-header {
   margin: 30px;
   display: block;
+  line-height: 10px;
 }
-
+a {
+  color: rgb(0, 3, 168);
+}
 .App-footer {
   text-align: center;
   margin: 30px, 0;
@@ -23,10 +28,15 @@ color: black;
 .Ictonary {
   font-size: 100px;
   position: relative;
-  line-height: 1%;
-  color:black;
+  height: 10px;
+  color:rgb(59, 59, 59);
   margin-right: 1%;
-  background-color: yellow;
+  margin-left: 15%;
+  bottom: 40%;
+  letter-spacing: 20px;
+
+  
+
   background-size: 100%;
 
 }

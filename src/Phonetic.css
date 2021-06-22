@@ -1,0 +1,14 @@
+.Phonetic a {
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    transition: all 150ms ease-in-out;
+    font-size: 15px;
+    
+
+}
+.Phonetic .text {
+    font-size: 15px;
+    line-height: 20px;
+}

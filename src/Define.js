@@ -6,6 +6,7 @@ export default function Define(props) {
    if (props.define) {
     return( 
         <div className="Define">
+            <section>
             <h2>
                 {props.define.word}
             </h2>
@@ -16,11 +17,12 @@ export default function Define(props) {
                     </div>
                 );
             })}
+            </section>
                 {props.define.meanings.map(function (meaning, index) {       
             return(
-                        <div key={index}>
+                <section key={index}>
                          <Meaning meaning={meaning} />
-                        </div>
+                </section>
                     );
                 })}
         </div>
